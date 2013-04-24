@@ -11,7 +11,7 @@
 include_recipe 'java::oracle'
 
 # Download Teamcity
-version = '7.1.4'
+version = node['teamcity']['version']
 install_dir = node['teamcity']['install_dir']
 download_path = File.join install_dir, "TeamCity-#{version}.tar.gz"
 
