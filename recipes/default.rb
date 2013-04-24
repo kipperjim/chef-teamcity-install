@@ -6,3 +6,7 @@
 # 
 # All rights reserved - Do Not Redistribute
 #
+
+# Install Java
+include_recipe 'java::oracle'
+

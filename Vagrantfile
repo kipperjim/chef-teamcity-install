@@ -67,16 +67,19 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = %w(./vendor/cookbooks)
     chef.json = {
-      :mysql => {
-        :server_root_password => 'rootpass',
-        :server_debian_password => 'debpass',
-        :server_repl_password => 'replpass'
+      :java => {
+        :oracle => {
+          :accept_oracle_download_terms => true
+        }
       }
     }
 
-    chef.run_list = [
-      "recipe[chef-teamcity-install::default]"
-    ]
+    chef.add_recipe 'chef-teamcity-install'
+
+    #chef.run_list = [
+    #  "recipe[chef-teamcity-install::default]"
+    #]
   end
 end
