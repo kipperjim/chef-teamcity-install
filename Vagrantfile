@@ -77,6 +77,6 @@ Vagrant.configure("2") do |config|
       }
     }
 
-    chef.add_recipe 'chef-teamcity-install'
+    chef.add_recipe 'chef-teamcity-install::upgrade'
   end
 end
