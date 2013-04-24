@@ -78,9 +78,5 @@ Vagrant.configure("2") do |config|
     }
 
     chef.add_recipe 'chef-teamcity-install'
-
-    #chef.run_list = [
-    #  "recipe[chef-teamcity-install::default]"
-    #]
   end
 end
