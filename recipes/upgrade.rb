@@ -5,7 +5,7 @@ end
 
 # Create backup
 install_dir = node['teamcity']['install_dir']
-install_path = File.join install_dir, "TeamCity"
+install_path = File.join install_dir, 'TeamCity'
 maintain_db_path = "#{install_path}/bin/maintainDB.sh"
 
 execute 'Backup data' do

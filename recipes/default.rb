@@ -21,7 +21,7 @@ remote_file download_path do
 end
 
 # Unpack
-install_path = File.join install_dir, "TeamCity"
+install_path = File.join install_dir, 'TeamCity'
 
 execute 'Unpack package' do
   command "tar -xvzf #{download_path} --directory \"#{install_dir}\""
