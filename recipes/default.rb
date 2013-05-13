@@ -8,9 +8,9 @@
 #
 
 %w[
+  chef-teamcity-install::install
   chef-teamcity-install::vcs
   chef-teamcity-install::ssh
-  chef-teamcity-install::install
 ].each do |r|
   include_recipe r
 end
