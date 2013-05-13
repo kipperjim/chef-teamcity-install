@@ -9,11 +9,11 @@ export TEAMCITY_DATA_PATH="<%= @teamcity_data_path %>"
 case "$1" in
   start)
     echo "Starting script teamcity "
-    <%= @teamcity_path %>/bin/runAll.sh start
+    start-stop-daemon --start -c <%= @user %> --exec <%= @teamcity_path %>/bin/runAll.sh start
     ;;
   stop)
     echo "Stopping script teamcity"
-    <%= @teamcity_path %>/bin/runAll.sh stop
+    start-stop-daemon --start -c <%= @user %> --exec <%= @teamcity_path %>/bin/runAll.sh stop
     ;;
   *)
     echo "Usage: /etc/init.d/teamcity {start|stop}"
